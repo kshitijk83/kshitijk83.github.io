@@ -5,7 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		
+		<link rel="stylesheet" href="/js/slick/slick.css">
+		<link rel="stylesheet" href="/js/slick/slick-theme.css">
 		
 		<title>Devorizon</title>
 		
@@ -1171,6 +1172,78 @@
 									</div>
 								</li>
 								
+								<li data-groups='["app"]' >
+									<div class='inner' >
+										<img src='img/portfolio/hospo.jpeg' alt>
+										<div class="title">
+											Hospo App
+										</div>
+										<div class='overlay' >
+											
+											<a href='#popup-7' class='view-project' >
+												View Project
+											</a>
+											
+											<div id='popup-7' class='popup-box zoom-anim-dialog mfp-hide' >
+												<figure class="slider">
+														<img src='img/portfolio/hospo.jpeg' alt>
+														<img src="img/portfolio/hospo1.jpeg" alt>
+														<img src="img/portfolio/hospo2.jpeg" alt>
+														<img src="img/portfolio/hospo3.jpeg" alt>
+												</figure>
+												<div class='content' >
+													
+													<h4>Hospo App</h4>
+													
+													<p>
+														React-native based cross-platform app for finding and posting hospitality jobs.
+													</p>
+													<!-- <a href="https://festnimbus.com/" target="_blank" rel="noopener noreferrer">Deployed Link</a> -->
+													
+												</div>
+												
+											</div>
+											
+										</div>
+										
+									</div>
+								</li>
+								<li data-groups='["app"]' >
+									<div class='inner' >
+										<img src='img/portfolio/vrfd.jpeg' alt>
+										<div class="title">
+											Vrfd App
+										</div>
+										<div class='overlay' >
+											
+											<a href='#popup-8' class='view-project' >
+												View Project
+											</a>
+											
+											<div id='popup-8' class='popup-box zoom-anim-dialog mfp-hide' >
+												<figure class="slider-2">
+														<img src='img/portfolio/vrfd.jpeg' alt>
+														<img src="img/portfolio/vrfd1.jpeg" alt>
+														<img src="img/portfolio/vrfd6.jpeg" alt>
+												</figure>
+												<div class='content' >
+													
+													<h4>Hospo App</h4>
+													
+													<p>
+														React-native based cross-platform app for finding and posting hospitality jobs.
+													</p>
+													<!-- <a href="https://festnimbus.com/" target="_blank" rel="noopener noreferrer">Deployed Link</a> -->
+													
+												</div>
+												
+											</div>
+											
+										</div>
+										
+									</div>
+								</li>
+								
 							</ul>
 							<h3 style="text-align: center;">
 								<a href="https://github.com/kshitijk83?tab=repositories" target="_blank" rel="noopener noreferrer">See more Projects Here!!</a>
@@ -1328,7 +1401,17 @@
 		<script src='js/owl.carousel.min.js' ></script>
 		<script src='js/jquery.magnific-popup.min.js' ></script>
 		<script src='js/validator.min.js' ></script>
+		<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="/js/slick/slick.min.js"></script>
 		<script src='js/script.js' ></script>
-		
+		<script>
+			$('.slider').slick({
+				dots: false
+			})
+			$('.slider-2').slick({
+				dots: false
+			})
+		</script>
 	</body>
 </html>
