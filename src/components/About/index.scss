@@ -1,0 +1,399 @@
+@import "../../extra.scss";
+
+.about-page{
+
+  display: flex;
+  flex-direction: column;
+  padding-left: 110px;
+  overflow-y: scroll;
+  color: #b9b9b9;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 200;
+  width:100%;
+  overflow-x: hidden;
+
+  @include respond(tab-port){
+    padding-left: 0px;
+    width: 100%;
+  }
+
+  .about-me{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
+    @include respond(tab-port){
+      flex-direction: column-reverse;
+      padding: 10px;
+    }
+
+    .text-zone{
+
+      width: 50%;
+      text-align: justify;
+
+      @include respond(tab-port){
+        width: auto;
+      }
+
+
+    &:before {
+      content: '<p>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -10px;
+      left: -10px;
+      // top: -10px;
+      opacity: 0.6;
+      line-height: 18px;
+    }
+
+    &:after {
+      content: '<p/>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 18px;
+      line-height: 18px;
+      position: absolute;
+      left: -30px;
+      bottom: -15px;
+      margin-left: 20px;
+      opacity: 0.6;
+    }
+  }
+  
+    .img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      
+      img{
+        width: 400px;
+      }
+
+      @include respond(tab-port){
+        width: auto;
+
+        img{
+          width: 300px;
+        }
+      }
+    }
+  }
+  
+
+  h1 {
+    font-size: 100px;
+    font-family: 'Coolvetica';
+    color: #ffd700;
+    font-weight: 400;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px;
+    // left: -10px;
+    width: 100%;
+
+    @include respond(tab-port){
+      font-size: 60px;
+      margin-top: 70px;
+      left: 15px;
+    }
+
+    &:before {
+      content: '<h1>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 18px;
+      position: absolute;
+      // margin-top: -10px;
+      left: -10px;
+      opacity: 0.6;
+      line-height: 18px;
+    }
+
+    &:after {
+      content: '<h1/>';
+      font-family: 'La Belle Aurore', cursive;
+      color: #ffd700;
+      font-size: 18px;
+      line-height: 18px;
+      position: absolute;
+      left: -30px;
+      bottom: -15px;
+      margin-left: 20px;
+      opacity: 0.6;
+    }
+  }
+
+  .skills{
+    margin-top: 30px;
+    text-align: justify;
+    padding: 10px;
+
+    h1{
+      margin-bottom: 0;
+    }
+
+    .skill-con{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap-reverse;
+
+      @include respond(tab-port){
+        width: 100%;
+      }
+
+      .text-zone{
+        position: relative;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        width: 50%;
+
+        p{
+          position: relative;
+          &:before {
+            content: '<p>';
+            font-family: 'La Belle Aurore', cursive;
+            color: #ffd700;
+            font-size: 18px;
+            position: absolute;
+            margin-top: -24px;
+            left: -10px;
+            // top: -10px;
+            opacity: 0.6;
+            line-height: 18px;
+    
+            @include respond(tab-port){
+              margin-top: 0px;
+              left: 4px;
+            }
+          }
+      
+          &:after {
+            content: '<p/>';
+            font-family: 'La Belle Aurore', cursive;
+            color: #ffd700;
+            font-size: 18px;
+            line-height: 18px;
+            position: absolute;
+            left: -30px;
+            bottom: -24px;
+            margin-left: 20px;
+            opacity: 0.6;
+          }
+        }
+  
+        @include respond(tab-port){
+          width: auto;
+        }
+
+        ul{
+          position: relative;
+          list-style: none;
+          margin-top: 35px;
+
+          &:before {
+            content: '<ul>';
+            font-family: 'La Belle Aurore', cursive;
+            color: #ffd700;
+            font-size: 18px;
+            position: absolute;
+            margin-top: -24px;
+            left: -10px;
+            // top: -10px;
+            opacity: 0.6;
+            line-height: 18px;
+    
+            @include respond(tab-port){
+              margin-top: 0px;
+              left: 4px;
+            }
+          }
+      
+          &:after {
+            content: '<ul/>';
+            font-family: 'La Belle Aurore', cursive;
+            color: #ffd700;
+            font-size: 18px;
+            line-height: 18px;
+            position: absolute;
+            left: -30px;
+            bottom: -24px;
+            margin-left: 20px;
+            opacity: 0.6;
+          }
+
+          li{
+            line-height: 1.5;
+            img{
+              background-color: white;
+              margin-right: 8px;
+              width: 15px;
+            }
+            span{
+              
+            }
+            
+          }
+        }
+        
+
+  
+      
+    }
+
+    .skill-anim{
+      width: 50%;
+
+      @include respond(tab-port){
+        width: auto;
+        display: none;
+      }
+      .ct{
+        margin:100px auto;
+        position:relative;
+        width:300px;
+        height:300px
+      }
+
+      /*Blue big circle and it's diameter coordinates*/
+      .circle-large{width:300px;height:300px;position:relative;border-radius:100%;border:1px solid #3498db}
+      .circle-large::before{background:#3498db;top:50%;width:299px;height:1px;}
+      .circle-large::after{background:#3498db;left:50%;top:0;width:1px;height:299px;}
+
+      /*Smaller, orange, centered circle*/
+      .circle-small{width:148px;height:148px;border-radius:100%;box-shadow:0 0 0 1px #e67e22;position:absolute;top:75px;left:75px;z-index:2;
+      animation:counterRotate 8s infinite linear;}
+
+      /*Tiny orange circle that spins on circle-small's side*/
+      .bullseye{width:11px;height:11px;border:1px solid #e67e22;border-radius:100%;position:absolute;left:50%;margin-left:-5px;margin-top:-6px;
+      animation:rotate 4s infinite linear}
+      .bullseye::before{width:149px;height:149px;left:-71px;top:-71px;border-radius:100%;border:1px solid #7f8c8d}
+
+        .axis{position:absolute;background:#7f8c8d;border:0;z-index:2;margin:0}
+        .axis.horizontal{top:4px;left:-145px;width:300px;height:1px}
+        .axis.vertical{top:-145px;left:4px;height:300px;width:1px}
+
+        .axis::before,
+        .axis::after{width:9px;height:9px;background:#7f8c8d;border-radius:100%}
+        .axis::before{top:-4px;left:-4px;}
+        .axis::after{bottom:-4px;right:-4px}
+
+        .bullet{width:11px;height:11px;border-radius:100%;border:1px solid #8e44ad;position:absolute;top:69px;left:-5px}
+        .bullet:nth-child(2){top:219px}
+
+      /*Orange ellipses*/
+
+      .ellipse{border:1px solid #e67e22;position:absolute;border-radius:100%;width:450px;height:150px;top:75px;left:-75px;}
+      .ellipse:nth-child(3){transform:rotate(45deg)}
+      .ellipse:nth-child(4){transform:rotate(90deg)}
+      .ellipse:nth-child(5){transform:rotate(135deg)}
+
+      @keyframes counterRotate { to{transform: rotate(-360deg)} }
+      @keyframes rotate { to{transform: rotate(360deg)} }
+    }
+    }
+  }
+}
+
+
+
+
+
+.stage-cube-cont {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    padding-top: 18%;
+    margin-left: 0;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+
+    @include respond(tab-port){
+        position: relative;
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+        height: 300px;
+        width: 100%;
+    }
+  }
+  
+  .cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 100px 100px 0;
+    margin-left: calc(50% - 100px);
+  
+    div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 0px lightyellow;
+    }
+  
+    .face1 {
+      transform: translateZ(100px);
+      color: #dd0031;
+    }
+    .face2 {
+      transform: rotateY(90deg) translateZ(100px);
+      color: #f06529;
+    }
+    .face3 {
+      transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+      color: #28a4d9;
+    }
+    .face4 {
+      transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+      color: #5ed4f4;
+    }
+    .face5 {
+      transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+      color: #efd81d;
+    }
+    .face6 {
+      transform: rotateX(-90deg) translateZ(100px);
+      color: #ec4d28;
+    }
+  }
+  
+  @keyframes spincube {
+    from,
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      transform: rotateY(-90deg);
+    }
+    33% {
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    50% {
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      transform: rotateX(90deg);
+    }
+  }

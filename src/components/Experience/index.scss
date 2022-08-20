@@ -1,0 +1,270 @@
+@import "../../extra.scss";
+
+.experience-page{
+    width: 95%;
+    // padding: 0 50px;
+    // display: block;
+    // margin: auto;
+    // overflow-y: scroll;
+    padding-left: 50px;
+    display: block;
+    margin-left: 50px;
+
+    @include respond(tab-port){
+        padding: 0 20px;
+        margin: 0;
+        overflow-y: hidden;
+        width: 100%;
+    }
+
+    .title{
+        margin-bottom: 80px;
+
+        h1{
+            font-size: 80px;
+            font-family: 'Coolvetica';
+            color: #ffd700;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+
+            @include respond(tab-port){
+                margin-top: 50px;
+                font-size: 45px;
+            }
+
+            &:before {
+                content: '<h1>';
+                font-family: 'La Belle Aurore', cursive;
+                color: #ffd700;
+                font-size: 18px;
+                position: absolute;
+                // margin-top: -10px;
+                left: -10px;
+                opacity: 0.6;
+                line-height: 18px;
+              }
+          
+              &:after {
+                content: '<h1/>';
+                font-family: 'La Belle Aurore', cursive;
+                color: #ffd700;
+                font-size: 18px;
+                line-height: 18px;
+                position: absolute;
+                left: -30px;
+                bottom: -15px;
+                margin-left: 20px;
+                opacity: 0.6;
+              }
+        }
+
+    }
+
+    .timeline{
+        color: rgb(189, 189, 189);
+        font-size: 13px;
+        min-height: 600px;
+        position: relative;
+        list-style: none;
+        padding: 40px 0px;
+        display: flex;
+        flex-direction: column;
+        perspective: 100em;
+        letter-spacing: 1.1px;
+
+        &::before{
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: 2px;
+            background: #ffd700;
+
+            @include respond(tab-port){
+                left: 0;
+            }
+        }
+
+        li{
+            margin-bottom: 40px;
+            width: 50%;
+            transition: .4s;
+            backface-visibility: visible;
+            transform-style: preserve-3d;
+            transform-origin: 100% 50%;
+            transform: rotateY(90deg);
+            
+                      
+
+            
+
+            @include respond(tab-port){
+                width: 100%;
+            }
+
+            &:nth-child(2n){
+                align-self: flex-end;
+                transform-origin: 0 50%;
+            }
+
+            &.visible {
+                opacity:1 !important;
+                transform: rotateY(0deg);
+            }
+        }
+
+
+
+        .timeline-content{
+            padding: 25px;
+            border: solid 1px #B6B6B6;
+            position: relative;
+            
+            // transition: all 3s linear;
+
+
+            &.left{
+                // opacity: 0;
+                text-align: justify;
+                margin-right: 32px;
+
+                @include respond(tab-port){
+                    margin: 0;
+                    margin-left: 32px;
+                }
+
+                h4{
+                    text-align: right;
+                }
+
+                &::after{
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    top: 50%;
+                    right: -44px;
+                    background: white;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    transform: translate(-50%,-50%);
+
+                    @include respond(tab-port){
+                        left: -32px;
+                    }
+                    
+                }
+
+                &::before{
+                    content: ' ';
+                    position: absolute;
+                    top: 50%;
+                    right: -32px;
+                    width: 32px;
+                    height: 1px;
+                    background: #B6B6B6;
+                    transition: all .2s linear;
+                    transform: translateY(-50%);
+                }
+
+            }
+            
+
+            &.right{
+                position: relative;
+                text-align: justify;
+                margin-left: 32px;
+                
+
+                h4{
+                    text-align: left;
+                }
+
+                &::after{
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    top: 50%;
+                    left: -32px;
+                    background: white;
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    transform: translate(-50%,-50%);
+                    
+                }
+
+                &::before{
+                    content: ' ';
+                    position: absolute;
+                    top: 50%;
+                    left: -32px;
+                    width: 32px;
+                    height: 1px;
+                    background: #B6B6B6;
+                    transition: all .2s linear;
+                    transform: translateY(-50%);
+                }
+
+            }
+
+            &:hover{
+                border-color: #ffd700;
+            }
+
+            &:hover::after{
+                background: #ffd700;
+            }
+
+            &:hover::before{
+                background: #ffd700;
+            }
+
+            h4{
+                margin: 0;
+                margin-bottom: 5px;
+                font-size: 32px;
+                letter-spacing:1.5px;
+            }
+
+            em{
+                margin-bottom: 10px;
+                display: block;
+                font-weight: 400;
+                display: flex;
+                justify-content: space-between;
+
+                @include respond(tab-port){
+                    flex-direction: column;
+                }
+            }
+
+            .text{
+                font-weight: 400;
+            }
+        }
+    }
+    
+
+    
+    
+
+    .text-animate-hover {
+        &:hover {
+          color: #fff;
+        }
+      }
+}
+
+@keyframes y-axis-animation-left {
+    from {transform: rotateY(90deg)}
+    to {transform: rotateY(0deg)}
+  }
+
+  @keyframes y-axis-animation-right {
+    from {transform: rotateY(90deg)}
+    to {transform: rotateY(0deg)}
+  }

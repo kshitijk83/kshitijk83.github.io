@@ -1,0 +1,46 @@
+{
+    "experiences":[
+        {
+            "company": "Paytm",
+            "desg": "Software Engineer",
+            "date": "June 2022 - Present",
+            "description": "Paytm is the most popular fintech and trust app for payments, banking, and financial services in India. Currently, I am working with the wallet team to resolve spring and react challenges. I am gaining insight into how things operate on a larger scale. Currently, I am a novice at Spring boot, but the job is thrilling.",
+            "points": [
+                "Working in Paytm Wallet team resolving frontend and backend issues"
+            ]
+        },
+        {
+            "company": "Flash Tech",
+            "desg": "Frontend Intern",
+            "date": "May 2021 – August 2021",
+            "description": "Flash Tech is a service based company majorly providing services to Western International Group, Dubai. I worked in INAAM app owned by Nesto Group International Dubai providing loyalty coupons, points and discounts for their shopping malls. I worked in React native stack and my major task was to optimize the app's multiple performance issue and flows. Here i learned about managing and deploying an app which have 100k+ users and 1 million+ customers. Learned about handling the pressure of deploying apps major flows overnight :) i swear this responsibility was huge for me but i passed with flying colors ;)",
+            "points": [
+                "Managed and added various important features in INAAM app provided by Nesto Group International Dubai which provides coupons and discounts in their shopping malls.",
+                "Optimized the app’s multiple flows and was in charge of important design and functional modifications that improved the app’s engagement by 30% for 10 lakh+ customers and 1 lakh+ user."
+            ]
+        },
+        {
+            "company": "National Blockchain Project",
+            "desg": "Full Stack Intern",
+            "date": "May 2020 – August 2020",
+            "description": "National Blockchain Project was an initiative by indian government handled by IIT Kanpur developing blockchain based solutions for the government. I worked here as a full stack developer with my favourite MERN stack. I developed a lightning-fast web solution to assist blockchain developers in quickly deploying a production-ready Hyperledger Fabric network of distributed servers. It's similar to IBM blockchain platform but a small scale version made by me, a simple website to develop our own Hyperledger blockchain network with all the custom configuration and debugging support.",
+            "points": [
+                "Engineered a scalable and lightning-fast web solution to assist blockchain developers in quickly deploying a production-ready Hyperledger Fabric network of distributed servers.",
+                "Shipped and delivered the project requirements by 40% faster",
+                "Optimized overall UI/UX to elevate engagement by 300%",
+                "Improved logging and debugging network logs using Blockchain Explorer."
+            ]
+        },
+        {
+            "company": "StartxLabs",
+            "desg": "Javascript Intern",
+            "date": "July 2019 – September 2020",
+            "description": "StartxLabs was an service based company provding services in web and app field. I worked in multiple projects here in react native where i resolved major issues regarding animations and made my first custom tinder swipe like animation in react-native. I was awarded best engineering intern of 2019 out of 10 interns. Here i was guided by most helpful mentor which i think was very crucial part of my life to learn about how things work in real life.",
+            "points": [
+                "Built new architecture for 2-3 projects with new modular programming tactics increasing the speed efficiency by 50%.",
+                "Managed 2 projects and supervised a project while developing solutions to meet a broad array of deliverables.",
+                "Awarded best engineering intern of 2019 out of 10 interns."
+            ]
+        }
+    ]
+}

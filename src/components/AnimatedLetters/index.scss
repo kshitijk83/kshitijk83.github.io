@@ -1,0 +1,47 @@
+.text-animate{
+    display: inline-block;
+    opacity: 1;
+    min-width: 10px;
+    
+}
+
+.bounceIn{
+    animation: bounceIn 1s 1s;
+    animation-fill-mode: forwards;
+}
+
+// .text-animate-hover{
+//     min-width: 10px;
+//     display: inline-block;
+//     animation-fill-mode: both;
+
+//     &:hover{
+//         animation: rubberBand 1s;
+//         color: #ffd700;
+//     }
+// }
+
+.text-animate-hover{
+    min-width: 10px;
+    display: inline-block;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+
+    &:hover{
+        color: #ffd700;
+    }
+}
+
+.animated{
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+    
+}
+
+@for $i from 1 to 40 {
+    .text-animate._#{$i}{
+        opacity: 1;
+        animation-delay: #{$i/10}s;
+    }
+}

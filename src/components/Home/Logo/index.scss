@@ -1,0 +1,77 @@
+@import '../../../extra.scss';
+.logo-container {
+    z-index: -3;
+    width: 559px;
+    height: 609px;
+    opacity: 0;
+    position: absolute;
+    top: 15%;
+    right: 6%;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+
+    @include respond(tab-port){
+        width: 263px;
+        height: 400px;
+        left: 0;
+        right: 0;
+    }
+
+
+    svg {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        transform: rotateZ(30deg) !important;
+    }
+    
+    .solid-logo {
+        position: absolute;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        opacity: 0;
+        transform: rotateZ(30deg) !important;
+        z-index: 1;
+    }
+}  
+
+.svg-container{
+    stroke: #ffd700;
+    stroke-width: 10px;
+}
+
+.path1 {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear forwards;
+  }
+  .path2 {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 500;
+    animation: dash 5s linear forwards;
+  }
+  .path3 {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 700;
+    animation: dash 5s linear forwards;
+  }
+  .path4 {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 300;
+    animation: dash 5s linear forwards;
+  }
+  
+  @keyframes dash {
+    // 99% {
+    //   stroke-dashoffset: 1000;
+    // }
+    100%{
+        stroke-dashoffset: 0;
+        stroke-dasharray: 0;
+    }
+  }
