@@ -1,0 +1,41 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 103px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  background-color: #b43939;
+}
+
+.needle-container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 10px;
+  background-color: rgba(29, 14, 14, 0.2);
+  overflow: hidden;
+  /* background-image: url(../assets/Ruler.svg);
+  background-position: center;
+  background-size: contain; */
+}
+
+.needle-range {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  bottom: 0;
+  right: 25px;
+}
+
+.needle {
+  width: 3px;
+  background-color: rgb(38, 14, 14);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
