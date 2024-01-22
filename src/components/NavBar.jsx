@@ -5,17 +5,17 @@ import {
   useRef,
   useState,
 } from "react";
-import "../css/nav-bar.css";
+import "../css/nav-bar.scss";
 import ruler from "../assets/Ruler.svg";
 
 const UP_RULER = {
-  full: 10,
-  half: 20,
+  full: 3,
+  half: 6,
 };
 
 const DOWN_RULER = {
-  full: 5,
-  half: 10,
+  full: 4,
+  half: 6,
 };
 
 const NavBar = forwardRef(function NavBar({ scrollPosition }, ref) {
@@ -51,29 +51,13 @@ const NavBar = forwardRef(function NavBar({ scrollPosition }, ref) {
   return (
     <div className="nav-bar">
       <div className="needle-container p-2">
-        <div className="w-full h-full border-black border-2 rounded-lg">
-          <div className="flex flex-col justify-around flex-wrap w-full h-full">
-            <div className="w-full h-[50%]">
-              <div className="flex justify-between pl-1 pr-1">
-                {/* small ruler */}
-                {Array(upRuler.full)
-                  .fill(0)
-                  .map((_, index) => (
-                    <>
-                      <div className="w-[3px] rounded-b-lg h-[20px] bg-black"></div>
-                      {Array(upRuler.half)
-                        .fill(0)
-                        .map((_, idx) => (
-                          <div className="w-[3px] rounded-b-lg h-[10px] bg-black"></div>
-                        ))}
-                    </>
-                  ))}
-              </div>
-            </div>
-            <div className="w-full h-[50%]">
+        <div
+          className="w-full h-full
+          rounded-lg overflow-hidden"
+        >
+          {/* <div className="flex flex-col justify-center flex-wrap w-full h-full">
+            <div className="w-full h-[50%] border-b-2 border-black">
               <div className="flex justify-between items-end h-full pl-1 pr-1">
-                {/* big ruler */}
-
                 {Array(downRuler.full)
                   .fill(0)
                   .map((_, index) => (
@@ -88,7 +72,24 @@ const NavBar = forwardRef(function NavBar({ scrollPosition }, ref) {
                   ))}
               </div>
             </div>
-          </div>
+            <div className="w-full h-[50%]">
+              <div className="flex justify-between pl-1 pr-1">
+                {Array(upRuler.full)
+                  .fill(0)
+                  .map((_, index) => (
+                    <>
+                      <div className="w-[3px] rounded-b-lg h-[20px] bg-black"></div>
+                      {Array(upRuler.half)
+                        .fill(0)
+                        .map((_, idx) => (
+                          <div className="w-[3px] rounded-b-lg h-[10px] bg-black"></div>
+                        ))}
+                    </>
+                  ))}
+              </div>
+            </div>
+            <div className="w-full h-[1px] bg-black"></div>
+          </div> */}
         </div>
         <div className="needle-range">
           <div className="needle" ref={ref}></div>

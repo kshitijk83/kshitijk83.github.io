@@ -1,159 +1,244 @@
 $background-color: #050205;
-$box-color: #605253;
+$box-color: #78ada5;
+$frame-color: #000000;
 $box-border: 60px;
 $screen-width: 480px;
 $screen-height: 320px;
 
-.tv-wrapper {
+.oldTv-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
   width: 100vw;
-  max-width: 100vh;
-  height: 80vh;
+  // max-width: 120vh;
+  height: 100vh;
   transform: translate(-50%, -50%);
+  background-color: #a87956;
+  // padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.tv {
+.oldTv {
+  position: relative;
   $border-color: darken($box-color, 20);
-  $highlight-color: lighten($border-color, 30);
-  $shadow-color: darken($border-color, 10);
+  $highlight-color: lighten($frame-color, 30);
+  $shadow-color: darken($frame-color, 10);
   $edge-color: lighten($border-color, 35);
+  width: 90%;
+  // max-width: 120vh;
 
-  padding-top: 80%;
+  height: 90%;
+  // height: 80%;
+  // margin: 50px;
   background: darken($box-color, 10%);
-  border-radius: 2px;
+  border-radius: 4%;
   border: 2px solid darken($edge-color, 10%);
   box-shadow: inset 0 0 18px 0 rgba(0, 0, 0, 0.5),
     0 0 0px 6px darken($box-color, 10%);
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    // top: 7%;
-    // left: 6%;
-    // right: 6%;
-    // bottom: 19%;
-    width: calc(100% - 50px);
-    height: calc(100% - 80px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+  gap: 10px;
+  .oldTv__frame {
+    // content: "";
+    // position: absolute;
+    // display: block;
+    position: relative;
+    width: calc(80%);
+    height: calc(100%);
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     background: linear-gradient(0deg, transparent, $shadow-color, transparent),
-      linear-gradient(34deg, transparent 45%, $highlight-color, transparent 55%),
+      linear-gradient(32deg, transparent 45%, $highlight-color, transparent 55%),
       linear-gradient(90deg, transparent, $shadow-color, transparent),
       linear-gradient(
-        145deg,
+        148deg,
         transparent 45%,
         $highlight-color,
         transparent 55%
       );
+    background-color: $frame-color;
     z-index: 1;
+    border-radius: 30px;
+    border: 2px solid $frame-color;
+    box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.2),
+      0 0 18px 0 rgba(0, 0, 0, 0.5);
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 100px);
+      height: calc(100% - 100px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $background-color;
+      opacity: 0.8;
+      z-index: 2;
+      border-radius: 1%;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .oldTv__panel {
+    width: 30%;
+    height: 100%;
     border-radius: 4px;
     border: 2px solid $edge-color;
     box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.2),
       0 0 18px 0 rgba(0, 0, 0, 0.5);
-  }
+    display: flex;
+    padding: 10px;
+    justify-content: start;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: calc(100% - 80px);
-    height: calc(100% - 100px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: $background-color;
-    opacity: 0.8;
-    z-index: 2;
-    border-radius: 18%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    .oldTv__switch {
+      $switch-color: #646570;
+
+      flex: 0 0 auto;
+      width: 6%;
+      margin: 2.6%;
+
+      &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+        border-radius: 50%;
+        background: linear-gradient(
+          120deg,
+          $switch-color,
+          lighten($switch-color, 24%),
+          $switch-color
+        );
+        box-shadow: inset 0 0 4px 1px lighten($switch-color, 20%),
+          0 0 8px 1px rgba(0, 0, 0, 0.42);
+      }
+    }
+
+    .oldTv__speaker {
+      $gap-width: 4%;
+
+      // margin-top: 10px;
+      // margin-bottom: 15px;
+      height: 100px;
+      width: 100%;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        black calc($gap-width / 2),
+        black calc($gap-width),
+        transparent calc($gap-width),
+        transparent calc($gap-width * 2)
+      );
+    }
   }
 }
+.oldTv__logo {
+  position: relative;
+  .box--gradient {
+    // position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 80%;
+    // left: 50%;
+    font-family: RioGrande;
+    font-size: 28px;
+    letter-spacing: 1px;
+    top: -100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+    overflow: hidden;
 
-.tv__screen {
+    &:after {
+      content: "";
+      top: 0;
+      transform: translateX(100%) rotate(30deg);
+      width: 300%;
+      height: 300%;
+      position: absolute;
+      z-index: 1;
+      animation: shine 2s infinite ease-in;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(128, 186, 232, 0) 100%
+      );
+    }
+    &.silver {
+      background: linear-gradient(to bottom, #bcc6cc, #eee, #bcc6cc);
+    }
+    &.gold {
+      background: linear-gradient(to bottom, #c39738, #deb761, #c39738);
+      &:after {
+        animation-delay: 1s;
+      }
+    }
+    &.platinum {
+      background: linear-gradient(to bottom, #d5d7e5, #eee, #d5d7e5);
+      &:after {
+        // animation-delay: 2s;
+      }
+    }
+  }
+}
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  80% {
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(30deg);
+  }
+}
+.oldTv__screen {
   position: absolute;
   width: calc(100% - 100px);
-  height: calc(100% - 120px);
+  height: calc(100% - 100px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 16%;
+  border-radius: 1%;
   overflow: hidden;
   z-index: 2;
   background: white;
   box-sizing: border-box;
-  shader-doodle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: $screen-width;
-    height: $screen-height;
-    transform: translate(-50%, -50%);
-  }
+  overflow-y: scroll;
 }
 
-.tv__panel {
+.oldTv__overlays {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  height: 12%;
-  padding: 0 6%;
-  justify-content: space-between;
-
-  .tv__switch {
-    $switch-color: #646570;
-
-    flex: 0 0 auto;
-    width: 6%;
-    margin: 0 2.6%;
-
-    &::before {
-      content: "";
-      display: block;
-      padding-top: 100%;
-      border-radius: 50%;
-      background: linear-gradient(
-        120deg,
-        $switch-color,
-        lighten($switch-color, 24%),
-        $switch-color
-      );
-      box-shadow: inset 0 0 4px 1px lighten($switch-color, 20%),
-        0 0 8px 1px rgba(0, 0, 0, 0.42);
-    }
-  }
-
-  .tv__speaker {
-    $gap-width: 4%;
-
-    margin-top: -4.2%;
-    height: 118%;
-    width: 29%;
-    background-image: repeating-linear-gradient(
-      90deg,
-      transparent,
-      black $gap-width / 2,
-      black $gap-width,
-      transparent $gap-width,
-      transparent $gap-width * 2
-    );
-  }
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1%;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+  // background-color: red;
+  box-sizing: border-box;
 }
 
-.tv__holders {
+.oldTv__holders {
   position: absolute;
   bottom: -18px;
-  left: 0;
-  right: 0;
+  left: 10%;
+  right: 10%;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+  // transform: translateY(50%);
 
-  .tv__holder {
+  .oldTv__holder {
     $holder-color: #101010;
 
     width: 30px;
@@ -164,5 +249,235 @@ $screen-height: 320px;
       lighten($holder-color, 20%),
       $holder-color
     );
+  }
+}
+
+.oldTv__radial {
+  .radial-slider {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    user-select: none;
+
+    .knob {
+      width: 80%;
+      height: 80%;
+      position: relative;
+      margin: 10%;
+      cursor: pointer;
+    }
+
+    .teeth {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      transform: rotateZ(var(--angle));
+      // filter: blur(3px) contrast(7);
+      // background: white; // Required for the gooey effect
+
+      &::after {
+        content: "";
+        width: 90%;
+        height: 90%;
+        border-radius: 100%;
+        background: radial-gradient(black 65%, transparent 66%) no-repeat,
+          repeating-conic-gradient(
+            black 0%,
+            1.5%,
+            transparent 1.5%,
+            transparent 5%
+          );
+      }
+    }
+
+    .cap {
+      display: flex;
+      border-radius: 100%;
+      width: 76%;
+      height: 76%;
+      position: absolute;
+      top: 12%;
+      left: 12%;
+      box-shadow: 0 0 2px 1px #c7a472;
+      background: repeating-conic-gradient(
+        from 15deg,
+        darken($box-color, 10) 0%,
+        darken($box-color, 10) 4%,
+        #f4ebd0 10%,
+        #f4ebd0 15%,
+        darken($box-color, 10) 28%,
+        darken($box-color, 10) 30%,
+        #f4ebd0 37%,
+        #f4ebd0 40%,
+        darken($box-color, 10) 45%,
+        darken($box-color, 10) 50%
+      );
+
+      &::after {
+        content: "";
+        border-radius: 100%;
+        width: 90%;
+        height: 90%;
+        margin: 5%;
+        background: repeating-radial-gradient(
+            transparent 0%,
+            #f4ebd026 2%,
+            transparent 4%
+          ),
+          repeating-conic-gradient(
+            from 15deg,
+            darken($box-color, 10) 0%,
+            lighten($box-color, 10) 5%,
+            darken($box-color, 10) 16%,
+            darken($box-color, 10) 34%,
+            lighten($box-color, 10) 45%,
+            darken($box-color, 10) 50%
+          );
+        box-shadow: inset 0 0 7px 0px $frame-color;
+      }
+    }
+
+    .indicator {
+      top: 60%;
+      left: 48%;
+      transform-origin: 50% -50%;
+      position: absolute;
+      transform: rotateZ(var(--angle));
+      width: 4%;
+      height: 20%;
+      background: black;
+      box-shadow: 0 0 2px white;
+      border-radius: 30%/10%;
+      pointer-events: none;
+    }
+
+    .numbers {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 1.6rem;
+      pointer-events: none;
+
+      .number {
+        transform: translateY(-50%) rotateZ(var(--angle)) translateX(-0.4em);
+        transform-origin: center;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 100%;
+
+        div {
+          transform: rotateZ(calc(-1 * var(--angle)));
+          display: inline-flex;
+          width: 1.5em;
+          justify-content: center;
+          margin-left: -0.3em;
+
+          &.line {
+            background: black;
+            width: 0.07em;
+            height: 0.6em;
+            transform: rotateZ(90deg) translateY(-0.5em) translateX(0.2em);
+            color: transparent;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+#switch {
+  position: relative;
+  width: 3rem;
+  height: 5rem;
+  background-color: #efefef;
+  border-radius: 0.35rem;
+  border: 1px solid #444;
+  box-shadow: inset 0 -0.3125rem 0.125rem #5e5c5c;
+  animation: vibrate 0.5s 0.3s 4;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 14%;
+    left: 29%;
+    width: 40%;
+    height: 25%;
+    // border: 0.125rem solid #222;
+    background: url(../assets/mute.svg);
+    background-size: cover;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 60%;
+    left: 33%;
+    width: 38%;
+    height: 23%;
+    background: url(../assets/volume.svg);
+    background-size: cover;
+    fill: red;
+    // border: 0.125rem solid #222;
+    // border-radius: 50%;
+  }
+
+  &.on {
+    background-color: #ccc;
+    box-shadow: inset 0 0.375rem 0.125rem #fff;
+    &::before {
+      top: 21%;
+    }
+    &::after {
+      top: 68%;
+    }
+  }
+}
+
+$pixelPath: 2px;
+
+@keyframes vibrate {
+  0% {
+    left: -$pixelPath;
+    right: -$pixelPath;
+  }
+  12.5% {
+    left: $pixelPath;
+    right: 0px;
+  }
+  25.0% {
+    left: -$pixelPath;
+    right: $pixelPath;
+  }
+  37.5% {
+    left: 0px;
+    right: -$pixelPath;
+  }
+  50.0% {
+    left: 0px;
+    right: $pixelPath;
+  }
+  62.5% {
+    left: $pixelPath;
+    right: -$pixelPath;
+  }
+  75.0% {
+    left: -$pixelPath;
+    right: 0;
+  }
+  87.5% {
+    left: $pixelPath;
+    right: $pixelPath;
+  }
+  100% {
+    left: 0px;
+    right: $pixelPath;
   }
 }

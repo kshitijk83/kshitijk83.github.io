@@ -21,6 +21,12 @@ body {
   src: url(./assets/ModernDOS9x16.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "RioGrande";
+
+  src: url(./assets/RioGrande.ttf) format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +41,10 @@ body {
 
   .ms-dos {
     font-family: "ms-dos";
+  }
+
+  .small-text-credit {
+    font-size: 8px;
   }
 }
 

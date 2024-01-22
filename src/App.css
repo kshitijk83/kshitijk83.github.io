@@ -7,6 +7,10 @@
   scrollbar-width: none;
 }
 
+body {
+  overflow: hidden;
+}
+
 .radio-controls-container {
   position: fixed;
   top: 0;
@@ -14,17 +18,19 @@
 }
 
 .channel-container {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  /* bottom: 0;
+  right: 0; */
+  width: 100%;
+  height: 100%;
   z-index: 3;
 }
 
 .reference-containers {
   height: 100vh;
-  min-height: 500px;
+  /* min-height: 500px; */
   opacity: 0;
   z-index: 1000;
 }
@@ -66,7 +72,7 @@
 .link-glitch {
   background-color: #02feff;
   color: white;
-  padding: 8px;
+  padding: 10px 12px;
 }
 
 .link-glitch:hover {
