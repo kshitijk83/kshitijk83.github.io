@@ -45,7 +45,7 @@ const TVWrapper = ({ children }) => {
     if (angleRef.current) {
       angleRef.current.style.setProperty(
         "--angle",
-        `${(scrollTop / height) * 720}deg`
+        `${(scrollTop / height) * 360}deg`
       );
     }
   };
