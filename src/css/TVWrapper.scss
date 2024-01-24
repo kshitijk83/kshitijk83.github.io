@@ -28,6 +28,10 @@ $purple: #8c00c9;
   justify-content: center;
   background-image: url(../assets/background1.jpg);
   background-size: contain;
+
+  @include respond(max-sm) {
+    height: 94vh;
+  }
   // background-image: -webkit-repeating-linear-gradient(
   //     135deg,
   //     transparent,
