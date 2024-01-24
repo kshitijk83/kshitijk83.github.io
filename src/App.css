@@ -29,10 +29,14 @@ body {
 }
 
 .reference-containers {
-  height: 100vh;
+  height: 96vh;
   /* min-height: 500px; */
   opacity: 0;
   z-index: 1000;
+
+  /* @media screen and (max-width: 768px) {
+    height: 100vh;
+  } */
 }
 
 .retro-nintendo-container {

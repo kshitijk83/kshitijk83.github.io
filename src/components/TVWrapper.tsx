@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "../css/TVWrapper.scss";
+import "../css/background.scss";
 import ContentOverlay from "./ContentOverlay";
 import { InView } from "react-intersection-observer";
 import StaticNoise from "./StaticNoise";
@@ -9,7 +10,8 @@ import About from "./About";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import End from "./End";
-import bgSound from "../assets/bgSound.mp3";
+import speakerImg from "../assets/speaker1.svg";
+import bgSound from "../assets/sound1.mp3";
 import noiseSound from "../assets/noise.mp3";
 
 const TVWrapper = ({ children }) => {
@@ -37,7 +39,7 @@ const TVWrapper = ({ children }) => {
       // @ts-ignore
       scrollref.current.style.setProperty(
         "left",
-        `${(scrollTop / height) * 100}%`
+        `${(scrollTop / height) * 100 * 0.8 + 10}%`
       );
     }
     if (angleRef.current) {
@@ -100,7 +102,7 @@ const TVWrapper = ({ children }) => {
             {[...Array(channelCount).keys()].map((channelIndex) => (
               <InView
                 key={channelIndex}
-                threshold={0.6}
+                threshold={0.5}
                 root={screenRef.current}
                 onChange={(inView) => {
                   if (inView) {
@@ -121,7 +123,7 @@ const TVWrapper = ({ children }) => {
             ))}
           </div>
           <div className="oldTv__overlays">
-            <ContentOverlay />
+            <ContentOverlay isSoundOn={isSoundOn} setIsSoundOn={setIsSoundOn} />
           </div>
           <div className="oldTv__overlays">
             {currentlyVisibleChannel === -1 && <StaticNoise />}
@@ -131,8 +133,8 @@ const TVWrapper = ({ children }) => {
           </div>
         </div>
 
-        <div className="oldTv__panel flex flex-col">
-          <div className="oldTv__radial flex flex-col w-full">
+        <div className="oldTv__panel flex flex-col justify-between">
+          <div className="oldTv__radial flex flex-col w-full max-md:w-auto max-md:flex-row">
             <div className="flex justify-between items-center">
               <div className="radial-slider">
                 <div className="knob" ref={angleRef}>
@@ -142,29 +144,27 @@ const TVWrapper = ({ children }) => {
                 </div>
               </div>
             </div>
-            <div className="oldTv__speaker"></div>
-            {/* <div className="oldTv__logo">
+          </div>
+
+          <div className="oldTv__tuner w-full">
+            <NavBar ref={scrollref} />
+          </div>
+          <div
+            className="w-full flex max-md:items-center justify-center max-sm:justify-between gap-3 max-md:w-auto max-md:mr-2 ml-2
+          max-sm:hidden max-md:rotate-90"
+          >
+            <div className="oldTv__switch"></div>
+            <div className="oldTv__switch"></div>
+            <div className="oldTv__switch "></div>
+          </div>
+          <div className="speaker max-md:hidden"></div>
+          {/* <div className="oldTv__speaker"></div> */}
+          {/* <div className="oldTv__logo">
               <div className="box--gradient gold">
                 <p>DEVORIZON</p>
               </div>
             </div> */}
-            <div className="w-full flex justify-center gap-3">
-              <div className="oldTv__switch"></div>
-              <div className="oldTv__switch"></div>
-              <div className="oldTv__switch "></div>
-            </div>
-            <div className="oldTv__speaker mb-2"></div>
-          </div>
-          <div
-            id="switch"
-            onClick={() => {
-              setIsSoundOn((prev) => !prev);
-            }}
-            className={`${isSoundOn ? "on" : ""} mt-2 mb-4`}
-          ></div>
-          <div className="oldTv__tuner w-full">
-            <NavBar ref={scrollref} />
-          </div>
+          {/* <div className="oldTv__speaker mb-2 max-sm:hidden"></div> */}
         </div>
         <div className="oldTv__holders">
           <div className="oldTv__holder"></div>

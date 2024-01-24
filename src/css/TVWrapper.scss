@@ -1,9 +1,17 @@
+@import "./mixins.scss";
+
 $background-color: #050205;
-$box-color: #78ada5;
+$box-color: #925022;
 $frame-color: #000000;
 $box-border: 60px;
 $screen-width: 480px;
 $screen-height: 320px;
+$panel-color: #f0e1be;
+$border: #888677;
+$gray-60: #666;
+$blue: #3570c9;
+$orange: #c97300;
+$purple: #8c00c9;
 
 .oldTv-wrapper {
   position: fixed;
@@ -18,6 +26,41 @@ $screen-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../assets/background1.jpg);
+  background-size: contain;
+  // background-image: -webkit-repeating-linear-gradient(
+  //     135deg,
+  //     transparent,
+  //     #101010 25%,
+  //     #737373 25%,
+  //     transparent 50%,
+  //     transparent 50%
+  //   ),
+  //   -webkit-repeating-radial-gradient(#616161, #222222);
+  // background-image: repeating-linear-gradient(
+  //   -45deg,
+  //   transparent,
+  //   #101010 25%,
+  //   #737373 25%,
+  //   transparent 50%,
+  //   transparent 50%
+  // );
+  // background-size: 6px 6px;
+  // background-color: #444;
+
+  // background: $gray-60;
+  // background-image: linear-gradient(90deg, $blue 11px, transparent 0),
+  //   linear-gradient(90deg, $orange 23px, transparent 0),
+  //   linear-gradient(90deg, $purple 41px, transparent 0);
+  // background-size: 41px 100%, 61px 100%, 83px 100%;
+
+  // background: linear-gradient(135deg, #fec56b 25%, transparent 25%),
+  //   linear-gradient(225deg, #fec56b 25%, transparent 25%),
+  //   linear-gradient(315deg, #fec56b 25%, transparent 25%),
+  //   linear-gradient(45deg, #fec56b 25%, transparent 25%);
+
+  // background-size: 50px 50px;
+  // background-color: #51c5d4;
 }
 .oldTv {
   position: relative;
@@ -26,14 +69,18 @@ $screen-height: 320px;
   $shadow-color: darken($frame-color, 10);
   $edge-color: lighten($border-color, 35);
   width: 90%;
-  // max-width: 120vh;
-
   height: 90%;
-  // height: 80%;
-  // margin: 50px;
+
+  @include respond(max-md) {
+    width: 97%;
+    height: 100%;
+    border-radius: 0;
+    gap: 2px;
+    padding: 0;
+  }
   background: darken($box-color, 10%);
-  border-radius: 4%;
-  border: 2px solid darken($edge-color, 10%);
+  border-radius: 1%;
+  border: 2px solid $border;
   box-shadow: inset 0 0 18px 0 rgba(0, 0, 0, 0.5),
     0 0 0px 6px darken($box-color, 10%);
 
@@ -42,16 +89,19 @@ $screen-height: 320px;
   align-items: stretch;
   padding: 20px;
   gap: 10px;
+
+  @include respond(max-md) {
+    flex-direction: column;
+  }
   .oldTv__frame {
-    // content: "";
-    // position: absolute;
-    // display: block;
     position: relative;
     width: calc(80%);
     height: calc(100%);
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
+
+    @include respond(max-md) {
+      width: 100%;
+      height: 100%;
+    }
     background: linear-gradient(0deg, transparent, $shadow-color, transparent),
       linear-gradient(32deg, transparent 45%, $highlight-color, transparent 55%),
       linear-gradient(90deg, transparent, $shadow-color, transparent),
@@ -87,12 +137,22 @@ $screen-height: 320px;
     width: 30%;
     height: 100%;
     border-radius: 4px;
-    border: 2px solid $edge-color;
+    border: 2px solid $frame-color;
+    background: $panel-color;
     box-shadow: inset 0 0 6px 0 rgba(0, 0, 0, 0.2),
       0 0 18px 0 rgba(0, 0, 0, 0.5);
     display: flex;
     padding: 10px;
+    padding-bottom: 0px;
     justify-content: start;
+
+    @include respond(max-md) {
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      justify-content: space-around;
+      padding: 5px;
+    }
 
     .oldTv__switch {
       $switch-color: #646570;
@@ -101,6 +161,15 @@ $screen-height: 320px;
       width: 6%;
       margin: 2.6%;
 
+      @include respond(max-md) {
+        width: 15px;
+        height: fit-content;
+      }
+
+      @include respond(max-sm) {
+        display: none;
+      }
+
       &::before {
         content: "";
         display: block;
@@ -108,30 +177,38 @@ $screen-height: 320px;
         border-radius: 50%;
         background: linear-gradient(
           120deg,
-          $switch-color,
-          lighten($switch-color, 24%),
-          $switch-color
+          $box-color,
+          lighten($box-color, 24%),
+          $box-color
         );
-        box-shadow: inset 0 0 4px 1px lighten($switch-color, 20%),
+        box-shadow: inset 0 0 4px 1px lighten($box-color, 20%),
           0 0 8px 1px rgba(0, 0, 0, 0.42);
       }
     }
 
     .oldTv__speaker {
       $gap-width: 4%;
-
-      // margin-top: 10px;
-      // margin-bottom: 15px;
       height: 100px;
       width: 100%;
       background-image: repeating-linear-gradient(
-        0deg,
-        transparent,
-        black calc($gap-width / 2),
-        black calc($gap-width),
-        transparent calc($gap-width),
-        transparent calc($gap-width * 2)
-      );
+          45deg,
+          transparent,
+          black 0%,
+          black 2%,
+          transparent 2%,
+          transparent 4%
+        ),
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          black 0%,
+          black 2%,
+          transparent 2%,
+          transparent 4%
+        );
+      @include respond(max-md) {
+        width: 20%;
+      }
     }
   }
 }
@@ -211,12 +288,30 @@ $screen-height: 320px;
   background: white;
   box-sizing: border-box;
   overflow-y: scroll;
+
+  @include respond(max-md) {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+  }
+  @include respond(max-sm) {
+    width: calc(100%);
+    height: calc(100%);
+  }
 }
 
 .oldTv__overlays {
   position: absolute;
   width: calc(100% - 100px);
   height: calc(100% - 100px);
+  @include respond(max-md) {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+  }
+  @include respond(max-sm) {
+    width: calc(100%);
+    height: calc(100%);
+  }
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -252,6 +347,23 @@ $screen-height: 320px;
   }
 }
 
+.speaker {
+  position: relative;
+  width: 106%;
+  height: 100%;
+  left: -3%;
+  justify-self: end;
+  background: url(../assets/speaker1.svg);
+  background-size: cover;
+  margin-top: auto;
+  transform: rotate(180deg);
+
+  // img {
+  //   object-fit: cover;
+  //   transform: rotate(180deg);
+  // }
+}
+
 .oldTv__radial {
   .radial-slider {
     width: 200px;
@@ -261,12 +373,23 @@ $screen-height: 320px;
     position: relative;
     user-select: none;
 
+    @include respond(max-md) {
+      width: 100px;
+      height: 100px;
+    }
+
     .knob {
       width: 80%;
       height: 80%;
       position: relative;
       margin: 10%;
       cursor: pointer;
+
+      @include respond(max-md) {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .teeth {
@@ -394,90 +517,93 @@ $screen-height: 320px;
   }
 }
 
+$btnColor: $panel-color;
 #switch {
-  position: relative;
-  width: 3rem;
-  height: 5rem;
-  background-color: #efefef;
-  border-radius: 0.35rem;
-  border: 1px solid #444;
-  box-shadow: inset 0 -0.3125rem 0.125rem #5e5c5c;
-  animation: vibrate 0.5s 0.3s 4;
+  position: absolute;
+  z-index: 3;
+  width: fit-content;
+  top: 1%;
+  right: 3%;
+  font: bold 3rem Roboto, sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0.08em 0 rgba(255, 255, 255, 0.5);
+  // display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 0.2em 0.5em 0.2em;
+  border-radius: 0.1em;
+  border: 2px solid;
+  border-color: color($btnColor shade(20%)) color($btnColor shade(30%))
+    color($btnColor shade(40%));
+  border-color: color(var($btnColor) shade(20%))
+    color(var($btnColor) shade(30%)) color(var($btnColor) shade(40%));
+  background-color: $btnColor;
+  background-color: var($btnColor);
+  background-image: linear-gradient($btnColor, color($btnColor shade(10%)));
+  background-image: linear-gradient(
+    var($btnColor),
+    color(var($btnColor) shade(10%))
+  );
+  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.1), 0 0.1em 0.2em rgba(0, 0, 0, 0.3),
+    0 -0.1em 0.07em rgba(0, 0, 0, 0.3) inset,
+    0 0.1em 0.07em rgba(255, 255, 255, 0.2) inset;
+  transition: all 100ms;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  animation-iteration-count: 5;
+  animation-delay: 1s;
+  perspective: 1000px;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 14%;
-    left: 29%;
-    width: 40%;
-    height: 25%;
-    // border: 0.125rem solid #222;
-    background: url(../assets/mute.svg);
-    background-size: cover;
-  }
-  &::after {
-    position: absolute;
-    content: "";
-    top: 60%;
-    left: 33%;
-    width: 38%;
-    height: 23%;
-    background: url(../assets/volume.svg);
-    background-size: cover;
-    fill: red;
-    // border: 0.125rem solid #222;
-    // border-radius: 50%;
-  }
-
-  &.on {
-    background-color: #ccc;
-    box-shadow: inset 0 0.375rem 0.125rem #fff;
-    &::before {
-      top: 21%;
-    }
-    &::after {
-      top: 68%;
-    }
+  svg {
+    fill: white;
+    width: 28px;
+    height: 28px;
   }
 }
 
-$pixelPath: 2px;
+button:hover,
+button:focus {
+  box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4), 0 0.1em 0.2em rgba(0, 0, 0, 0.4),
+    0 -0.1em 0.07em rgba(0, 0, 0, 0.3) inset,
+    0 0.1em 0.07em rgba(255, 255, 255, 0.2) inset;
+}
 
-@keyframes vibrate {
-  0% {
-    left: -$pixelPath;
-    right: -$pixelPath;
+button:active {
+  padding: 0.4em 1em 0.4em;
+  margin-top: 0.1em;
+  border-color: color(#eee shade(30%)) color(#eee shade(20%)) #eee;
+  border-color: color(var(#eee) shade(30%)) color(var(#eee) shade(20%))
+    var(#eee);
+  background-image: linear-gradient(color(#eee shade(5%)), #eee);
+  background-image: linear-gradient(color(var(#eee) shade(5%)), var(#eee));
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1) inset,
+    0 0.1em 0.1em rgba(0, 0, 0, 0.2) inset,
+    0.05em 0 0.07em rgba(0, 0, 0, 0.2) inset,
+    -0.05em 0 0.07em rgba(0, 0, 0, 0.2) inset;
+  transition-duration: 10ms;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
   }
-  12.5% {
-    left: $pixelPath;
-    right: 0px;
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
   }
-  25.0% {
-    left: -$pixelPath;
-    right: $pixelPath;
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
   }
-  37.5% {
-    left: 0px;
-    right: -$pixelPath;
-  }
-  50.0% {
-    left: 0px;
-    right: $pixelPath;
-  }
-  62.5% {
-    left: $pixelPath;
-    right: -$pixelPath;
-  }
-  75.0% {
-    left: -$pixelPath;
-    right: 0;
-  }
-  87.5% {
-    left: $pixelPath;
-    right: $pixelPath;
-  }
-  100% {
-    left: 0px;
-    right: $pixelPath;
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }

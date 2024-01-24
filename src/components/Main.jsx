@@ -6,83 +6,58 @@ import TerminalCommand from "./TerminalCommand";
 
 const Main = () => {
   return (
-    <div className="retro-nintendo-container w-full h-full">
-      <div className="w-full h-full flex flex-col justify-center items-center">
-        <h1 className="mb-10 max-md:m-1 font-semibold text-[30px] underline">
-          The Portfolio
+    <div className="retro-nintendo-container w-full h-full pb-4">
+      <div
+        className="w-full h-full flex flex-col justify-center items-center
+     
+      "
+      >
+        <h1
+          className="mb-10 max-md:m-4 font-semibold text-[30px]
+        max-lg:text-[24px]
+         leading-10 underline"
+        >
+          <span className="max-sm:hidden">The</span> Portfolio
         </h1>
         <div className="font-sans mb-4">Directed By</div>
         <div className="">Kshitiz Kumar</div>
-        <div className="flex gap-8 mt-8 w-max flex-wrap pointer-events-auto">
+        <div
+          className="flex gap-8 mt-8 w-100% max-lg:text-[0.75em] flex-wrap
+        max-sm:justify-around max-sm:items-baseline
+         "
+        >
           <a
             href="https://www.linkedin.com/in/kshitiz-kumar-a0407314b/"
             target="_blank"
-            className="link-glitch bg-[#472a2a]"
+            className="link-glitch bg-[#472a2a] pointer-events-auto"
           >
             LinkedIn
           </a>
           <a
             href="https://drive.google.com/file/d/1MW5287uW6OxHOPuCwu3_jLU9zmV1M7Es/view?usp=sharing"
             target="_blank"
-            className="link-glitch bg-[#472a2a]"
+            className="link-glitch bg-[#472a2a] pointer-events-auto"
           >
             Resume
           </a>
           <a
             target="_blank"
-            className="link-glitch bg-[#472a2a]"
+            className="link-glitch bg-[#472a2a] pointer-events-auto"
             href="mailto:kshitijdev046@gmail.com"
           >
             Mail
           </a>
           <a
             target="_blank"
-            className="link-glitch bg-[#472a2a]"
+            className="link-glitch bg-[#472a2a] pointer-events-auto"
             href="https://devorizon.hashnode.dev/"
           >
             Blog
           </a>
         </div>
-        {/* <div
-          className="flex justify-between gap-2 max-md:flex-col
-        max-md:items-center"
-        >
-          <div className="">
-            <div className="flicker-image">
-              <img src={profile} />
-            </div>
-          </div>
-          <div className="flex gap-8 mt-8">
-            <a
-              href="https://www.linkedin.com/in/kshitiz-kumar-a0407314b/"
-              target="_blank"
-              className="link-glitch"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1MW5287uW6OxHOPuCwu3_jLU9zmV1M7Es/view?usp=sharing"
-              target="_blank"
-              className="link-glitch"
-            >
-              Resume
-            </a>
-            <a
-              target="_blank"
-              className="link-glitch"
-              href="mailto:kshitijdev046@gmail.com"
-            >
-              Mail
-            </a>
-            <a
-              target="_blank"
-              className="link-glitch"
-              href="https://devorizon.hashnode.dev/"
-            >
-              Blog
-            </a>
-          </div>
-        </div> */}
+      </div>
+      <div className="w-full text-right underline text-[12px] max-md:text-[2vw]">
+        Scroll down to move further &gt;&gt;
       </div>
     </div>
   );
