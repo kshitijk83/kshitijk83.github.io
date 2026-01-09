@@ -20,7 +20,7 @@ const About = () => {
           I am a team player, but I don't hesitate to take on ambitious projects
           single-handedly.
           <div className="flex gap-8 w-full flex-wrap mt-3 text-left">
-            Skills: ReactJS, NextJS, ReactNative, NodeJS, MongoDB
+            Skills: ReactJS, VueJS, NextJS, NodeJS, MongoDB, ReactNative
           </div>
         </div>
         <div className="flicker-image mt-4 mb-4 flex justify-center items-center w-[35%]">

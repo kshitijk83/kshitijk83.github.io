@@ -13,6 +13,7 @@ import End from "./End";
 import speakerImg from "../assets/speaker1.svg";
 import bgSound from "../assets/sound1.mp3";
 import noiseSound from "../assets/noise.mp3";
+import Experience2 from "./Experience2";
 
 const TVWrapper = ({ children }) => {
   const screenRef = useRef<any>(null);
@@ -21,7 +22,7 @@ const TVWrapper = ({ children }) => {
   const noiseSoundRef = useRef<any>(null);
 
   // Put as many components as you like here
-  const channels = [<Main />, <About />, <Experience />, <Projects />, <End />];
+  const channels = [<Main />, <About />, <Experience />, <Experience2 />, <Projects />, <End />];
 
   const channelCount = channels.length;
   const [currentlyVisibleChannel, setCurrentlyVisibleChannel] = useState(0);

@@ -12,6 +12,7 @@ function App() {
   const channels = [
     <div className="">intro</div>,
     <div className="">Experience</div>,
+    <div className="">Experience 2</div>,
     <div className="">Projects</div>,
     <div className="">Other Things</div>,
     // <div className="pt-[200px] max-md:pt-0">Content 4</div>,
